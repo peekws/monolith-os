@@ -1,26 +1,94 @@
-@import "tailwindcss";
+* { box-sizing: border-box; }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0f1115;
+  color: #e6e8ec;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.app-shell {
+  display: flex;
+  min-height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.sidebar {
+  width: 220px;
+  background: #181c23;
+  border-right: 1px solid #262b36;
+  padding: 24px;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.sidebar .logo {
+  font-weight: 900;
+  margin-bottom: 22px;
+  letter-spacing: 0.2px;
 }
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar a {
+  color: #9aa0ad;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.sidebar a:hover {
+  color: #e6e8ec;
+  background: #0f1115;
+  border: 1px solid #262b36;
+}
+
+.content {
+  flex: 1;
+  padding: 32px;
+}
+
+.card {
+  background: #181c23;
+  border: 1px solid #262b36;
+  border-radius: 14px;
+  padding: 20px;
+}
+
+input, select, textarea {
+  background: #0f1115;
+  border: 1px solid #262b36;
+  color: #e6e8ec;
+  padding: 10px 12px;
+  border-radius: 10px;
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #3a4150;
+}
+
+/* ✅ SZARO-CZARNE PRZYCISKI */
+button {
+  background: #e6e8ec;
+  color: #0f1115;
+  border: 1px solid #262b36;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+button:hover {
+  background: #d7dbe2;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+h1 { margin: 0 0 16px 0; }
